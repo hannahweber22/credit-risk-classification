@@ -2,30 +2,33 @@
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+# In this module, I used a variety of techniques to train and evaluate a model based on loan risk. The dataset is of historical lending activity from a peer-to-peer lending services company. The model identifies the creditworthiness of borrowers. The variables I predicted during the analysis were the y.value counts to see the balance of labels, and the accuracy score, confusion matrix and classification report to see how accurate the model is performaning. I went through splitting the data into training and testing data, fitting the training data to a logistic regrssion model, predicting the testing data, refitting the training data to a randomoversampler model, and repredicting the testing data to the logistic model.The methods used were the LogisticRegression and RandomOverSampler. 
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+# Machine Learning Model 1:
+# The logistic regression model predicts the healthy loan ('0') with a 
+ - 100% precision
+ - 100% recall
+ - 100% f1-score
+# The high-risk loan is predicted w/ a 
+ - 87% precision
+ - 89% recall 
+ - 88% f1-score
+# The healthy loan uses a lot more support data points of 18759 than the high-risk loan of 625. Both the healthy and high-risk loans are predicted very well. 
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
-
-
-
-* Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+#  Machine Learning Model 2:
+# The regression model, fit w/ oversampled data, predicts the data better. The healthy loan ('0') still has a 
+ - 100% precision
+ - 100% recall
+ - 100% f1-score
+# The high-risk loan is now 
+ - 87% precision
+ - 100% recall 
+ - 93% f1-score
+# The healthy loan uses a lot more support data points of 18759 than the high-risk loan of 625. Both the healthy and high-risk loans are predicted very well. 
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
+# The model where the training data is fit w/ the RandomOverSampler model and predicted w/ the LogisticRegression models seems to perform slightly better based on the classification report. I believe it would be more important to predict '1's to determine if a loan is high risk. It would be important for the model to be able to determine high risk loans and point those out. A mistake of missing a high risk loan is probably more costly than missing a healthy loan. 
